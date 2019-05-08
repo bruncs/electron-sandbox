@@ -1,0 +1,25 @@
+{
+  "name": "electron-sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^5.0.1",
+    "eslint": "^5.16.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bruncs/electron-sandbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bruncs/electron-sandbox/issues"
+  },
+  "homepage": "https://github.com/bruncs/electron-sandbox#readme"
+}
