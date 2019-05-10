@@ -1,7 +1,6 @@
 const { app, BrowserWindow } = require("electron");
 
 let mainWindow;
-let browserWindow;
 
 const createWindow = () => {
   mainWindow = new BrowserWindow({
@@ -12,12 +11,8 @@ const createWindow = () => {
     }
   });
 
-  browserWindow = new BrowserWindow({
-    parent: mainWindow
-  });
-
   mainWindow.loadFile("index.html");
-  browserWindow.loadFile("https://github.com");
+  mainWindow.maximize();
 };
 
 app.on("ready", createWindow);
