@@ -9,5 +9,12 @@
     We are using node <script>document.write(process.versions.node)</script>,
     Chrome <script>document.write(process.versions.chrome)</script>,
     and Electron <script>document.write(process.versions.electron)</script>.
+    <p>This app is using <span id="cpuUsageValue"></span> of CPU.</p>
+    <script>
+      function getPercentOfCPUUsage(){
+        return process.getCPUUsage().percentCPUUsage;
+      }
+      setInterval(() => document.getElementById("cpuUsageValue").innerHTML = getPercentOfCPUUsage().toFixed(2) + " %", 1000)
+    </script>
   </body>
 </html>
