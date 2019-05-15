@@ -10,11 +10,18 @@
     Chrome <script>document.write(process.versions.chrome)</script>,
     and Electron <script>document.write(process.versions.electron)</script>.
     <p>This app is using <span id="cpuUsageValue"></span> of CPU.</p>
+    <p>It's also ocuppying <span id="memoryUsageValue"></span> of memory.</p>
     <script>
       function getPercentOfCPUUsage(){
         return process.getCPUUsage().percentCPUUsage;
       }
-      setInterval(() => document.getElementById("cpuUsageValue").innerHTML = getPercentOfCPUUsage().toFixed(2) + " %", 1000)
+
+      function getMemoryUsageInMB(){
+        return process.memoryUsage().rss / (1024 * 1024);
+      }
+
+      setInterval(() => document.getElementById("cpuUsageValue").innerHTML = getPercentOfCPUUsage().toFixed(2) + " %", 1000);
+      setInterval(() => document.getElementById("memoryUsageValue").innerHTML = getMemoryUsageInMB().toFixed(2) + " MB", 1000);
     </script>
   </body>
 </html>
